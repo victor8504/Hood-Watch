@@ -29,7 +29,7 @@ DEBUG = config('DEBUG',default=False,cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
-GOOGLE_MAPS_API_KEY = config('GOOGLE_MAP_API_KEY')
+GOOGLE_MAPS_API_KEY = config('GOOGLE_MAPs_API_KEY')
 
 # Application definition
 
