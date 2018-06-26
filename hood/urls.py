@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.contrib.auth import views as authviews
 
 urlpatterns = [
-    url(r'',include('watch.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url(r'^',include('watch.urls')),
+    url(r'^logout/$', authviews.logout, {"next_page": '/'}, name="logout"),
 ]

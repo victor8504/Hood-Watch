@@ -1,0 +1,10 @@
+{% extends "registration/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+{{ block.super }}
+<h3 style="text-align:center;">{% trans "Thanks for signing up, your account is now activated. " %}</h3>
+<h3 style="text-align:center;" >{% trans "You will be notified about new posts." %}</h3>
+{% endblock %}

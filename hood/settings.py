@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'watch',
     'bootstrap4',
     'tinymce',
-    'registration',
     'mapwidgets',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -162,3 +161,5 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
