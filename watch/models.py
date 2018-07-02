@@ -29,7 +29,7 @@ def __str__(self):
 
 class Hood(models.Model):
     address = AddressField(max_length = 100)
-    location = GeoLocationField(blank = True)
+    geolocation = GeoLocationField(blank = True)
 
     def __str__(self):
         return self.address

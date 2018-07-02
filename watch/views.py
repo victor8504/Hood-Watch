@@ -8,17 +8,25 @@ from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import SignupForm
+from .forms import SignupForm, HoodForm
 from .emails import send_activation_email
 from .tokens import account_activation_token
-from .models import Profile
+from .models import Profile, Hood
 
 # Create your views here.
 @login_required(login_url='/login/')
 def home(request):
     title = 'Hood-Watch'
 
-    return render(request, 'index.html',{'title':title})
+    if request.method == 'POST':
+        form = HoodForm(request.POST)
+        if form.is_valid():
+            geolocate = form.save(commit = False)
+            geolocate.save()
+        else:
+            form = HoodForm()
+
+    return render(request, 'index.html',{'form':HoodForm,'title':title})
 
 
 # def signup(request):
